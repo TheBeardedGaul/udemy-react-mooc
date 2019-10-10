@@ -1,25 +1,39 @@
 import React, { Component } from 'react';
 import './App.css';
+import UserOutput from './User/Component/Output/UserOutput';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <ol>
-          <li>Create TWO new components: UserInput and UserOutput</li>
-          <li>UserInput should hold an input element, UserOutput two paragraphs</li>
-          <li>Output multiple UserOutput components in the App component (any paragraph texts of your choice)</li>
-          <li>Pass a username (of your choice) to UserOutput via props and display it there</li>
-          <li>Add state to the App component (=> the username) and pass the username to the UserOutput component</li>
-          <li>Add a method to manipulate the state (=> an event-handler method)</li>
-          <li>Pass the event-handler method reference to the UserInput component and bind it to the input-change event</li>
-          <li>Ensure that the new input entered by the user overwrites the old username passed to UserOutput</li>
-          <li>Add two-way-binding to your input (in UserInput) to also display the starting username</li>
-          <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
-        </ol>
-      </div>
-    );
-  }
+const app = props => {
+  // const [userState, setUserState] = useState({
+  //   persons: [
+  //     {name: 'Max', age: 28},
+  //     {name: 'Manu', age: 29},
+  //     {name: 'Stephanie', age: 26}
+  //   ]
+  // });
+  
+
+  return (
+    <div className="App">
+      <UserOutput 
+        quote='Talk is cheap. Show me the code'
+        name='Linus Torvalds' />
+      <UserOutput
+        quote='Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live'
+        name='John Woods' />
+      <UserOutput
+        quote='Any fool can write code that a computer can understand. Good programmers write code that humans can understand'
+        name='Martin Fowler' />
+      <UserOutput
+        quote={'I\'m not a great programmer; I\'m just a good programmer with great habits'}
+        name='Kent Beck' />
+      <UserOutput
+        quote={'That\'s the thing about people who think they hate computers. What they really hate is lousy programmers'}
+        name='Larry Niven' />
+      <UserOutput
+        quote='Truth can only be found in one place: the code'
+        name='Robert C. Martin' />
+    </div>
+  );
 }
 
-export default App;
+export default app;

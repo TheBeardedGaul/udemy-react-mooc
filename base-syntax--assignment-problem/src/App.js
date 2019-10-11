@@ -3,7 +3,7 @@ import './App.css';
 import UserOutput from './User/Component/Output/UserOutput';
 
 const app = props => {
-  const [usersState, setUsersState] = useState({
+  const [usersState] = useState({
     users: [
       {quote: 'Talk is cheap. Show me the code', name: 'Linus Torvalds'},
       {quote: 'Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live', name: 'John Woods'},
@@ -14,38 +14,23 @@ const app = props => {
     ]
   });
 
-
   return (
     <div className="App">
-      {/* {
-        userState.users.forEach(user => {
-          return (
-            <UserOutput 
-              quote={user.quote}
-              name={user.name} />
-          )
-        })
-      } */}
       <UserOutput 
-        quote={usersState.users[0].quote}
-        name={usersState.users[0].name} />
+        user={usersState.users[0]} />
       <UserOutput
-        quote={usersState.users[1].quote}
-        name={usersState.users[1].name} />
+        user={usersState.users[1]} />
       <UserOutput
-        quote={usersState.users[2].quote}
-        name={usersState.users[2].name} />
+        user={usersState.users[2]} />
       <UserOutput
-        quote={usersState.users[3].quote}
-        name={usersState.users[3].name} />
+        user={usersState.users[3]} />
       <UserOutput
-        quote={usersState.users[4].quote}
-        name={usersState.users[4].name} />
+        user={usersState.users[4]} />
       <UserOutput
-        quote={usersState.users[5].quote}
-        name={usersState.users[5].name} />
+        user={usersState.users[5]} />
     </div>
   );
 }
+
 
 export default app;

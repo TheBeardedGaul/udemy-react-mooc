@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import UserOutput from './User/Component/Output/UserOutput';
+import UserOutput from './User/Component/UserOutput/UserOutput';
 
 const app = props => {
   const [usersState] = useState({

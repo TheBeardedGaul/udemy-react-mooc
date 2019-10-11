@@ -5,7 +5,8 @@ import UserInput from '../Input/UserInput';
 const userOutput = (props) => {
     
     const [userState, setUserState] = useState({
-        user: props.user
+        user: props.user,
+        untouchedStyle: true
     });
 
     const nameChangedHandler = (event) => {
@@ -16,8 +17,16 @@ const userOutput = (props) => {
         });
     }
 
+    const untouchedStyle = {
+        backgroundColor: '#D4AF37'
+    };
+
+    const getStyle = () => {
+        return (userState.untouchedStyle) ? untouchedStyle : {};
+    };
+
     return (
-        <div className="User">
+        <div className="User" style={getStyle()}>
             <p>"{userState.user.quote}"</p>
             <p>{userState.user.name}</p>
             <UserInput
